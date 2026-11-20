@@ -5,5 +5,4 @@
     state: present
     shell: /bin/bash
     create_home: yes
-    password: "{{ default_password }}"
   loop: "{{ application_users }}"
