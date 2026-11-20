@@ -1,2 +1,8 @@
 ---
-application_user: appuser
+application_users:
+  - appuser
+  - devuser
+  - testuser
+  - deployuser
+  - monitoringuser
+  - backupuser

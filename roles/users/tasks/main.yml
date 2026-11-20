@@ -1,6 +1,8 @@
 ---
-- name: Create application user
+- name: Create application users
   user:
-    name: "{{ application_user }}"
+    name: "{{ item }}"
     state: present
     shell: /bin/bash
+    create_home: yes
+  loop: "{{ application_users }}"
