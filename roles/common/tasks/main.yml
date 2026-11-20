@@ -1,0 +1,4 @@
+---
+- name: Update package metadata
+  dnf:
+    update_cache: yes

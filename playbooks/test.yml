@@ -1,0 +1,13 @@
+---
+- name: Validate Managed Nodes
+  hosts: webservers
+  gather_facts: yes
+
+  tasks:
+
+    - name: Ping test
+      ansible.builtin.ping:
+
+    - name: Show hostname
+      ansible.builtin.debug:
+        var: ansible_hostname
