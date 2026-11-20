@@ -6,4 +6,3 @@ application_users:
   - deployuser
   - monitoringuser
   - backupuser
-default_password: "Password@123"
