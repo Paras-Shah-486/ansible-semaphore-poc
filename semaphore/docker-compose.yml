@@ -1,0 +1,21 @@
+services:
+  semaphore:
+    image: semaphoreui/semaphore:latest
+    container_name: semaphore
+    restart: unless-stopped
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      SEMAPHORE_DB_DIALECT: sqlite
+      SEMAPHORE_ADMIN: admin
+      SEMAPHORE_ADMIN_PASSWORD: Admin@123
+      SEMAPHORE_ADMIN_NAME: Paras Shah
+      SEMAPHORE_ADMIN_EMAIL: paraskumarshah@outlook.com
+
+    volumes:
+      - semaphore_data:/var/lib/semaphore
+
+volumes:
+  semaphore_data:

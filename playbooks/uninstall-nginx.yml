@@ -1,0 +1,34 @@
+---
+- name: Remove Web Server Configuration
+  hosts: webservers
+  become: yes
+
+  tasks:
+
+    - name: Stop nginx service
+      service:
+        name: nginx
+        state: stopped
+      ignore_errors: yes
+
+    - name: Disable nginx service
+      service:
+        name: nginx
+        enabled: false
+      ignore_errors: yes
+
+    - name: Remove nginx package
+      dnf:
+        name: nginx
+        state: absent
+
+    - name: Remove deployed website
+      file:
+        path: /usr/share/nginx/html/index.html
+        state: absent
+
+    - name: Remove application user
+      user:
+        name: appuser
+        state: absent
+        remove: yes
