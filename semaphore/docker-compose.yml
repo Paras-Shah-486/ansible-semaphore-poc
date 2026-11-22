@@ -1,14 +1,14 @@
 services:
   semaphore:
-    image: semaphoreui/semaphore:latest
+    image: semaphoreui/semaphore:latest # This image will be pulled from dicker hub https://hub.docker.com/r/semaphoreui/semaphore
     container_name: semaphore
-    restart: unless-stopped
+    restart: unless-stopped # Docker Always restart this container if it stops unexpectedly or if the host server reboots, unless I explicitly stopped it myself.
 
     ports:
-      - "3000:3000"
+      - "3000:3000" # Host to container port mapping
 
     environment:
-      SEMAPHORE_DB_DIALECT: sqlite
+      SEMAPHORE_DB_DIALECT: sqlite # tells semaphore to use SQLite as the backend database to store all Semaphore configuration and application data. Instead of running a seperate DB server it stors data in file database.sqlite inside /var/lib/semaphore
       SEMAPHORE_ADMIN: admin
       SEMAPHORE_ADMIN_PASSWORD: Admin@123
       SEMAPHORE_ADMIN_NAME: Paras Shah
