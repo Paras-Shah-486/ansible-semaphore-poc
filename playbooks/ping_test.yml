@@ -10,4 +10,4 @@
 
     - name: Show hostname
       ansible.builtin.debug:
-        var: ansible_hostname
+        msg: "Hostname is {{ ansible_facts.hostname }}"
