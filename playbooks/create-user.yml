@@ -1,0 +1,7 @@
+---
+- name: Configure Web Servers
+  hosts: webservers
+  become: yes
+  roles:
+    - common
+    - users
