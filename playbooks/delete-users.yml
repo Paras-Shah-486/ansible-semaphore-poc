@@ -1,6 +1,6 @@
 ---
 - name: Remove Application Users
   hosts: webservers
-  become: true
+  become: yes
   roles:
     - delete_users
