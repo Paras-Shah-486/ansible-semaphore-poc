@@ -1,0 +1,22 @@
+---
+- name: Stop nginx service
+  service:
+    name: nginx
+    state: stopped
+  ignore_errors: true
+
+- name: Disable nginx service
+  service:
+    name: nginx
+    enabled: false
+  ignore_errors: true
+
+- name: Remove website
+  file:
+    path: /usr/share/nginx/html/index.html
+    state: absent
+
+- name: Remove nginx package
+  dnf:
+    name: nginx
+    state: absent

@@ -1,0 +1,7 @@
+---
+- name: Remove application users
+  user:
+    name: "{{ item }}"
+    state: absent
+    remove: yes
+  loop: "{{ application_users }}"
