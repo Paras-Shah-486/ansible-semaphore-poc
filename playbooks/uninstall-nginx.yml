@@ -1,6 +1,6 @@
 ---
 - name: Remove Web Server Configuration
   hosts: webservers
-  become: true
+  become: yes
   roles:
     - nginx_uninstall
