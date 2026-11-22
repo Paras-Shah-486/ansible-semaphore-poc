@@ -1,0 +1,11 @@
+---
+- name: Delete application users
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Remove application users
+      user:
+        name: "{{ item }}"
+        state: absent
+        remove: yes
+      loop: "{{ application_users }}"
