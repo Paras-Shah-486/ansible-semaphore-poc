@@ -3,5 +3,4 @@
   hosts: webservers
   become: yes
   roles:
-    - common
     - users
