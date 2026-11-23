@@ -6,3 +6,9 @@ application_users:
   - deployuser
   - monitoringuser
   - backupuser
+
+delete_users:
+  - ajay
+  - manish
+  - raja
+  - sachin
