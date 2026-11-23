@@ -1,8 +1,0 @@
----
-application_users:
-  - appuser
-  - devuser
-  - testuser
-  - deployuser
-  - monitoringuser
-  - backupuser
