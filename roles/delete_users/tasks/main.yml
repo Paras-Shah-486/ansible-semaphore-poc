@@ -4,4 +4,4 @@
     name: "{{ item }}"
     state: absent
     remove: yes
-  loop: "{{ application_users }}"
+  loop: "{{ delete_users }}"
