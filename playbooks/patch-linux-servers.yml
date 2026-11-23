@@ -1,0 +1,19 @@
+---
+- name: Patch Linux Servers
+  hosts: webservers
+  become: true
+  tasks:
+    - name: Update all packages
+      dnf:
+        name: '*'
+        state: latest
+        update_cache: yes
+
+    - name: Check if reboot required
+      shell: needs-restarting -r
+      register: reboot_status
+      failed_when: false
+      changed_when: false
+
+    - debug:
+        var: reboot_status.stdout
