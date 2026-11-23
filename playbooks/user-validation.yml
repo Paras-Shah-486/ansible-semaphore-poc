@@ -1,0 +1,16 @@
+---
+- name: User Validation
+  hosts: webservers
+  become: true
+  tasks:
+    - name: Verify managed users
+      command: id {{ item }}
+      loop: "{{ create_users }}"
+      register: users_info
+      failed_when: false
+      changed_when: false
+
+    - name: Display user information
+      debug:
+        msg: "{{ item.stdout }}"
+      loop: "{{ users_info.results }}"
