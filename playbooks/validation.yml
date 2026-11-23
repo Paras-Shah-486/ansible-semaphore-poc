@@ -16,7 +16,7 @@
 
     - name: Verify users
       command: id {{ item }}
-      loop: "{{ application_users }}"
+      loop: "{{ create_users }}"
       register: users_info # Ansible stores the complete result inside: users_info
       failed_when: false # Do not fail the playbook even if rc != 0
       changed_when: false # This is a check only, not a configuration change
