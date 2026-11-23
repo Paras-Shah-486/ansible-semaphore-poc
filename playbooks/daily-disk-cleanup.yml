@@ -1,0 +1,19 @@
+---
+- name: Daily Disk Cleanup
+  hosts: webservers
+  become: true
+  tasks:
+
+    - name: Clean dnf cache
+      shell: dnf clean all
+
+    - name: Remove old temp files
+      shell: find /tmp -type f -mtime +7 -delete
+
+    - name: Display free disk space
+      shell: df -h /
+      register: disk_info
+      changed_when: false
+
+    - debug:
+        var: disk_info.stdout_lines
