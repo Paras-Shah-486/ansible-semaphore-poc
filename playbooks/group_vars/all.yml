@@ -10,6 +10,7 @@ create_users:
   - manish
   - raja
   - sachin
+default_password: "$6$CgZzYPy9G/7hzpnn$rCEGPwCkG3FNJaxYtE0JDNwBUWsggdnSz3jZdbgGXanNJ1Ly1TmO59RjD4EksXXyKhLUm.qGaeckvXBl/.mJX0"
 
 delete_users:
   - ajay
