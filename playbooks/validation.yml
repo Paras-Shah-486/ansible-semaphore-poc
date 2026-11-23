@@ -1,0 +1,35 @@
+---
+- name: Validate Environment
+  hosts: webservers
+  become: yes
+
+  tasks:
+
+    - name: Verify nginx service status
+      shell: "systemctl is-active nginx"
+      register: nginx_service # Ansible stores the complete result inside: nginx_service
+      failed_when: false # Do not fail the playbook even if rc != 0
+      changed_when: false # This is a check only, not a configuration change
+
+    - debug:
+        var: nginx_service.stdout
+
+    - name: Verify users
+      command: id {{ item }}
+      loop: "{{ application_users }}"
+      register: users_info # Ansible stores the complete result inside: users_info
+      failed_when: false # Do not fail the playbook even if rc != 0
+      changed_when: false # This is a check only, not a configuration change
+
+    - debug:
+        msg: "{{ item.stdout }}"
+      loop: "{{ users_info.results }}"
+
+    - name: Verify webpage
+      shell: "curl localhost"
+      register: webpage_info # Ansible stores the complete result inside: webpage_info
+      failed_when: false # Do not fail the playbook even if rc != 0
+      changed_when: false # This is a check only, not a configuration change
+
+    - debug:
+        var: webpage_info.stdout_lines
