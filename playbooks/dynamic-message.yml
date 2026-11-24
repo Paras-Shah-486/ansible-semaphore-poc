@@ -1,0 +1,7 @@
+---
+- name: Dynamic Message Playbook
+  hosts: webservers
+  become: true
+  tasks:
+    - debug:
+        msg: "{{ lookup('env','MESSAGE') }}"
