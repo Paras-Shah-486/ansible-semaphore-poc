@@ -1,0 +1,14 @@
+---
+- name: Environment Precheck
+  hosts: webservers
+  become: true
+  tasks:
+    - name: Verify connectivity
+      ping:
+
+    - name: Show hostname
+      command: hostname
+      register: hostname
+
+    - debug:
+        var: hostname.stdout
