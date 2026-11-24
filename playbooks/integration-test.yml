@@ -1,0 +1,16 @@
+---
+- name: Integration Test
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Display integration execution
+      debug:
+        msg: "Semaphore Integration Triggered Successfully"
+
+    - name: Show hostname
+      command: hostname
+      register: hostname_info
+      changed_when: false
+
+    - debug:
+        var: hostname_info.stdout
