@@ -14,3 +14,5 @@ Host Config, on the other hand, maps SSH credentials to specific Git hosts or re
 Repository answers "which repository should be used," while Host Config answers "which SSH key should be used when accessing a particular Git host or dependency." 
 Host Config becomes useful when repositories use private submodules, Ansible Galaxy roles, or collections hosted across multiple Git platforms such as GitHub, GitLab, and Bitbucket.
 
+Group Mapping is used when Semaphore is integrated with an external identity provider such as LDAP, Azure AD, GitHub OAuth, or GitLab. It automatically maps users from external groups to Semaphore teams, enabling centralized access management and role-based access control without manually assigning users to teams. For a small local-user deployment, Group Mapping is typically not required.
+
