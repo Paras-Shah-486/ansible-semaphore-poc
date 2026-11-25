@@ -16,3 +16,17 @@ Host Config becomes useful when repositories use private submodules, Ansible Gal
 
 Group Mapping is used when Semaphore is integrated with an external identity provider such as LDAP, Azure AD, GitHub OAuth, or GitLab. It automatically maps users from external groups to Semaphore teams, enabling centralized access management and role-based access control without manually assigning users to teams. For a small local-user deployment, Group Mapping is typically not required.
 
+
+Cluster:
+
+Load Balancer
+                        |
+     -------------------------------------
+     |                |                 |
+
+Semaphore-1     Semaphore-2      Semaphore-3
+     |                |                 |
+     -------------------------------------
+                    |
+                PostgreSQL
+
