@@ -18,6 +18,12 @@ Group Mapping is used when Semaphore is integrated with an external identity pro
 
 API Tokens are used to authenticate requests to the Semaphore REST API. They allow external systems such as Jenkins, GitHub Actions, ServiceNow, custom portals, or scripts to manage Semaphore resources, trigger tasks, retrieve execution history, and automate administrative operations without using the web interface.
 
+Local stores secrets directly in the Semaphore database and is commonly used for SSH keys, passwords, and tokens. 
+Storage is used for file-based artifacts such as kubeconfig files, certificates, or Ansible Vault password files. 
+ENV reads values from operating system environment variables.
+while File reads values from files present on the Semaphore host. 
+
+
 
 **Cluster:
 **
