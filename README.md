@@ -16,6 +16,8 @@ Host Config becomes useful when repositories use private submodules, Ansible Gal
 
 Group Mapping is used when Semaphore is integrated with an external identity provider such as LDAP, Azure AD, GitHub OAuth, or GitLab. It automatically maps users from external groups to Semaphore teams, enabling centralized access management and role-based access control without manually assigning users to teams. For a small local-user deployment, Group Mapping is typically not required.
 
+API Tokens are used to authenticate requests to the Semaphore REST API. They allow external systems such as Jenkins, GitHub Actions, ServiceNow, custom portals, or scripts to manage Semaphore resources, trigger tasks, retrieve execution history, and automate administrative operations without using the web interface.
+
 
 Cluster:
 
