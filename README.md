@@ -8,3 +8,5 @@ The Integration URL exposes a webhook endpoint that allows external systems such
 # test webhook
 #Under maintanance
 # again testing
+
+Token authentication protects the integration endpoint from unauthorized execution. External systems such as Jenkins, GitHub Actions, ServiceNow, or internal portals can securely trigger Semaphore task templates by sending the correct authentication token in a custom HTTP header.
