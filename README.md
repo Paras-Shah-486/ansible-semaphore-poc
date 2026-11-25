@@ -9,4 +9,8 @@ The Integration URL exposes a webhook endpoint that allows external systems such
 
 Token authentication protects the integration endpoint from unauthorized execution. External systems such as Jenkins, GitHub Actions, ServiceNow, or internal portals can securely trigger Semaphore task templates by sending the correct authentication token in a custom HTTP header.
 
+The Repository feature defines the Git repository that Semaphore clones and executes from. 
+Host Config, on the other hand, maps SSH credentials to specific Git hosts or repository URLs. 
+Repository answers "which repository should be used," while Host Config answers "which SSH key should be used when accessing a particular Git host or dependency." 
+Host Config becomes useful when repositories use private submodules, Ansible Galaxy roles, or collections hosted across multiple Git platforms such as GitHub, GitLab, and Bitbucket.
 
