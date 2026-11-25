@@ -6,3 +6,4 @@ Host mappings allow Semaphore to use different credentials for different Git hos
 The Integration URL exposes a webhook endpoint that allows external systems such as GitHub, Jenkins, ServiceNow, monitoring tools, or custom applications to trigger Semaphore task templates and workflows programmatically. This enables event-driven automation and GitOps workflows without requiring users to log in to the Semaphore UI.
 
 # test webhook
+#Under maintanance
