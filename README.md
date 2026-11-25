@@ -19,8 +19,8 @@ Group Mapping is used when Semaphore is integrated with an external identity pro
 API Tokens are used to authenticate requests to the Semaphore REST API. They allow external systems such as Jenkins, GitHub Actions, ServiceNow, custom portals, or scripts to manage Semaphore resources, trigger tasks, retrieve execution history, and automate administrative operations without using the web interface.
 
 
-Cluster:
-
+**Cluster:
+**
 Load Balancer
                         |
      -------------------------------------
@@ -31,4 +31,23 @@ Semaphore-1     Semaphore-2      Semaphore-3
      -------------------------------------
                     |
                 PostgreSQL
+
+
+**Runners:
+**
+                 Semaphore
+                      |
+     -----------------------------------
+     |                |               |
+     |                |               |
+
+ Runner-1       Runner-2       Runner-3
+     |                |               |
+
+ Web01/Web02     Other Hosts     Other Hosts
+
+
+Runner-1 → Operations Tasks
+Runner-2 → Deployment Tasks
+Runner-3 → Infrastructure Tasks
 
