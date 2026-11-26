@@ -1,0 +1,9 @@
+---
+- name: Deploy Application
+  hosts: webservers
+  become: true
+  tasks:
+    - name: Deploy application version
+      copy:
+        content: "Version 1.0 deployed by Semaphore"
+        dest: /usr/share/nginx/html/version.html
