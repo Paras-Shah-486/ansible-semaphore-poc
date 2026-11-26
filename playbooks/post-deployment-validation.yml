@@ -1,0 +1,22 @@
+---
+- name: Post Deployment Validation
+  hosts: webservers
+  become: true
+  tasks:
+    - name: Verify NGINX
+      shell: systemctl is-active nginx
+      register: nginx_status
+      failed_when: false
+      changed_when: false
+
+    - debug:
+        var: nginx_status.stdout
+
+    - name: Verify Web Page
+      shell: curl localhost
+      register: webpage
+      failed_when: false
+      changed_when: false
+
+    - debug:
+        var: webpage.stdout_lines
